@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Star Wars Web Form</title>
+</head>
+<body>
+  <form name="practice-form" action="success.html" method="post">
+    <fieldset>
+
+      <div>
+        <label>Which is the best Star Wars Movie?</label>
+          <select name="best-movie">
+            <option value="force-awakens">The Force Awakens</option>
+            <option value="empire">The Empire Strikes Back</option>
+            <option value="new-hope">A New Hope</option>
+            <option value="jedi">Return of the Jedi</option>
+          </select>
+      </div>
+
+      <div>
+        <label>Tell us why:</label>
+        <textarea name="best-explanation"></textarea>
+      </div>
+
+      <div>
+        <label>When did you last see that movie:</label>
+        <input type="date" name="date">
+      </div>
+
+      <div>
+        <input type="checkbox" name="cb-agree" value="agree">
+        I promise never to show my children the prequels.
+      </div>
+
+      <div>
+        <label>What do you say when a Jedi leaves?</label>
+        <input type="password" name="password">
+      </div>
+
+    </fieldset>
+
+    <button type="submit">This is not the form you're looking for.</button>
+    </form>
+</body>
+</html>
