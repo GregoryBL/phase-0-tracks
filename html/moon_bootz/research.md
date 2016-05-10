@@ -2,8 +2,8 @@
 
 #What is a block-level element? What are some examples of block-level elements? What are they used for?
 
-A block-level element takes up all the horizontal space that it can and starts on a new line. They are used for layout type tasks. Common examples are: 
-     <div> , <h1> - <h6>, <form> 
+A block-level element takes up all the horizontal space that it can and starts on a new line. They are used for layout type tasks. Common examples are:
+`<div> , <h1> - <h6>, <form>` 
 
 
 #Can you find any good charts or resources on when you should use these elements? 
@@ -16,7 +16,7 @@ div is used to style an entire block section, while span is used to style a smal
 What is an inline element?
 
 An inline element is does not start on a new line and only takes the space that it requires. Example are:
-    <span>, <a>, <img>
+`<span>, <a>, <img>`
 
 #Do inline elements usually nest inside block-level elements, or is it typically the other way around?
 
