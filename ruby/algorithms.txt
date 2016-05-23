@@ -8,3 +8,94 @@
 - While the floor number is not equal to the floor you want to go to, wait.
 - When the doors open, exit the elevator.
 
+Making coffee in a french press
+
+# Make sure all items are available
+- Check to make sure you have the following materials: water source, measuring cup, kettle, stovetop, coffee beans, scale, coffee grinder, french press beaker, french press beaker holder, french press screen, french press bottom stabilizer, french press top stabilizer, french press lid, wooden spoon, timer, carafe. If any are missing, stop (you can't make french press coffee).
+
+# Measure the beans
+- Put the measuring cup on the scale
+- Turn on the scale
+- Press the tare button
+- If the number on the scale doesn't equal 0: 
+  - If this is the third time you've reached this instruction, stop, else turn off the scale and return to line 18. 
+- While the number on the scale is less than 56g, add coffee beans.
+- Pour the contents of the measuring cup into the grinder.
+
+# Measure the water
+- Find the capacity of the measuring cup.
+- Empty the kettle.
+- While the total amount of water in the kettle is less than 4 cups minus the capacity of the measuring cup:
+  - fill the measuring cup 
+  - pour the water from the measuring cup into the kettle.
+- Compute the difference between 4 cups and the total amount of water in the kettle
+- measure that much water in the measuring cup
+- add the water in the measuring cup to the kettle.
+
+# Heat water
+- Place kettle on stove.
+- Twist knob to the light setting
+- Wait 3 seconds.
+- If there is no fire:
+  - Twist knob to off position
+  - Increase the number of times this has happened by 1
+  - If this is the third time this has happened, stop.
+  - Wait 3 seconds
+  - Return to line 37
+- Turn the knob to high
+
+# Grind coffee beans
+- Set grind setting on the grinder to coarse
+- While there are still whole coffee beans in the grinder, press the grind button
+- tap the left and right side of the container # to knock grounds to bottom
+
+# Assemble the french press bottom and add grounds
+- Place french press beaker holder on counter
+- Slide french press beaker into french press beaker holder
+- Turn the french press beaker clockwise while holding the french press beaker holder still until the spout of the french press beaker is pointing 180 degrees from the handle of the french press beaker holder.
+- Remove the reservoir of ground coffee from the grinder
+- Pour contents of the reservoir into the french press beaker
+
+# Assemble the french press lid and filter
+- Place french press bottom stabilizer on the counter next to the beaker with the pole in the center facing up
+- Pick up the french press screen and turn it so the edges curve up
+- Place the center of the french press screen around the pole in the center of the french press bottom stabilizer
+- Pick up the french press top stabilizer and turn it so the twisted wire is facing up
+- Place the center of the french press top stabilizer around the pole in the center of the french press bottom stabilizer.
+- Pick up the french press lid and turn it so the black sphere is on the top
+- Screw the bottom of the pole of the french press lid into the top of the pole of the french press bottom stabilizer until it is on tightly
+
+# Brew coffee
+- While the water is not boiling, wait
+- Set the timer for 45 seconds
+- Turn the knob on the stove to the off position
+- Start the timer
+- While the timer isn't going off, wait  # cooling the water
+- Turn off the timer
+- Set the timer for 1 minute
+- Start the timer
+- Pour water from the kettle into the french press beaker until it reaches halfway
+- Put the kettle back on the stove
+- While the timer isn't going off, wait # Allowing coffee to bloom
+- Turn off the timer
+- Set the timer for 3 minutes
+- Start the timer
+- Pick up the spoon and move it clockwise in the beaker for 10 turns
+- Move the spoon counter-clockwise in the beaker for 10 turns
+- Pour the remainder of the water from the kettle into the french press beaker
+- Remove the spoon from the beaker and place it on the counter
+- Pick up the lid and filter mechanism
+- Push up on the filter part until it is touching the french press lid
+- Place the filter and lid inside the top of the beaker
+
+# Press coffee and pour
+- While the timer isn't going off, wait
+- Turn off the timer
+- Press downward slowly on the top of the black sphere on top of the french press lid until it reaches the bottom.
+- Turn the lid clockwise until the holes in the side point the same direction as the spout of the beaker
+- Place the carafe on the counter next to the french press beaker holder
+- Grab the handle of the french press beaker holder and lift it until the spout of the french press beaker is higher than the top of the carafe
+- Rotate the french press beaker holder until the spout is pointing at the carafe
+- While there is still liquid in the french press beaker
+  - If no liquid is pouring into the carafe:
+    - Tilt the french press beaker holder toward the carafe until liquid is pouring into the carafe
