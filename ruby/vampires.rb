@@ -48,6 +48,18 @@ while num_empl_left > 0
     result = "Definitely a vampire."
   end
 
+  # This could overwrite a stronger statement above, but the assignment isn't clear about how that should work.
+  puts "Do you have any allergies (if no more type 'done')?"
+  allergy_answer = ""
+
+  while allergy_answer.downcase != "done"
+    allergy_answer = gets.chomp
+    if allergy_answer.downcase == "sunshine"
+      result = "Probably a vampire."
+      break
+    end
+  end
+
   puts result
 
   num_empl_left = num_empl_left - 1
