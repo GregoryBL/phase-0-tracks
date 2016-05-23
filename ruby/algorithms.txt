@@ -1,0 +1,10 @@
+- If not in front of elevator, use navigation algorithm to find it.
+- Find what floor you are on
+- Find what floor you are going to
+- If the floor you are going to is greater than the floor you are going to, press the up button, else if the floor you are going to is the same as the floor you are on, don't use the elevator, else press the down button.
+- While the doors are closed, wait.
+- When doors open, check to make sure the light shows the elevator going the direction you want to go. If it doesn't, go back to line 5, else enter the elevator.
+- For each number on a button in the elevator, check if it matches the floor you want to go to. If it does, press it and stop searching and comparing.
+- While the floor number is not equal to the floor you want to go to, wait.
+- When the doors open, exit the elevator.
+
