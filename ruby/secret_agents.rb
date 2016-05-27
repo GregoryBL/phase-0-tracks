@@ -16,8 +16,8 @@ def encrypt(string1)
 
     if string1[counter] == " "
       # do nothing
-    elsif string1[counter] == "z"
-      
+    elsif string1[counter] == "z" # "z".next -> "aa" but we want "a", so we added this case
+      string1[counter] = "a"
     else
       string1[counter] = string1[counter].next
     end
@@ -65,14 +65,37 @@ def decrypt(string1)
   string1
 end
 
-puts encrypt("abc")
-puts encrypt("zed")
+# puts encrypt("abc")
+# puts encrypt("zed")
 
-puts decrypt("bcd")
-puts decrypt("afe")
+# puts decrypt("bcd")
+# puts decrypt("afe")
 
+# puts decrypt(encrypt("swordfish")) # "swordfish" is encrypted (increasing each letter by one) and then decrypted (decreasing each letter by one), so it returns the same thing.
 
+# Pseudocode for interface
 
+# Ask for encrypt or decrypt
+# Ask for password
+
+# If encrypt, do encrypt(password)
+# If decrypt, do decrypt(password)
+
+# Print result
+# Exit
+
+puts "Would you like to encrypt or decrypt a password?"
+enc_dec = gets.chomp
+puts "What is your password?"
+password = gets.chomp
+
+if enc_dec == "encrypt"
+  puts "Encrypted password: #{encrypt(password)}"
+elsif enc_dec == "decrypt"
+  puts "Decrypted password: #{decrypt(password)}"
+else
+  puts "Jolly good joke, sir."
+end
 
 
 
