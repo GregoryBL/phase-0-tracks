@@ -33,5 +33,19 @@ def alias_method(name)
   swap_letters_array.join('')
 end
 
-p alias_method("Gregory Berns-Leone")
-p alias_method("Felicia Torres") == "Vussit Gimodoe" # true if test case worked
+# p alias_method("Gregory Berns-Leone")
+# p alias_method("Felicia Torres") == "Vussit Gimodoe" # true if test case worked
+
+def interface
+  while true
+    puts "What name would you like to make into an alias?"
+    answer = gets.chomp
+    if answer.downcase == "quit"
+      break
+    else
+      puts alias_method(answer)
+    end
+  end
+end
+
+interface
