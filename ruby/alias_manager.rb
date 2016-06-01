@@ -9,13 +9,12 @@
 # join the array (and implicitly return)
 
 def alias_method(name)
-  reversed_name = name.split(' ').reverse.join(' ') # now "last first"
-  
   vowels = "aeiou".split('')
   consonants = "bcdfghjklmnpqrstvwxyz".split('')
   
+  reversed_name = name.split(' ').reverse.join(' ') # now "last first"
   swap_letters_array = reversed_name.split('').map do |letter|
-    lett = letter.downcase # need to keep letter for putting back upper case
+    lett = letter.downcase # need to keep letter for returning to upper case
     if vowels.include?(lett)
       return_letter = vowels[vowels.index(lett)+1 % vowels.length]
     elsif consonants.include?(lett)
@@ -23,9 +22,9 @@ def alias_method(name)
     else # handles all other characters
       return_letter = letter
     end
-    # If first or last name has more than one capital, String#capitalize is not enough
+    # If first or last name has more than one capital, String#capitalize on each name is not enough to capitalize correctly
     if letter < "a" # capitals are less than the smallest lower case
-      return_letter = return_letter.upcase # can't use upcase! here because every of that letter will get capitlized for some reason
+      return_letter = return_letter.upcase # can't use upcase! here because every future of that letter will get capitlized for some reason
     end
     return_letter # this is necessary because we had to capitalize
   end
@@ -37,15 +36,20 @@ end
 # p alias_method("Felicia Torres") == "Vussit Gimodoe" # true if test case worked
 
 def interface
-  while true
+  alias_hash = {}
+  while true # we're going to break on "quit"
     puts "What name would you like to make into an alias?"
     answer = gets.chomp
     if answer.downcase == "quit"
       break
+    elsif answer == ""
+      # do nothing
     else
-      puts alias_method(answer)
+      alias_hash[answer.to_sym] = alias_method(answer)
     end
   end
+  puts "Aliases created:"
+  alias_hash.each { |real_name, alias_name| puts "#{alias_name} is an alias for #{real_name}" }
 end
 
 interface
