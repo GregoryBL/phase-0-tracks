@@ -39,8 +39,10 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
   rand_gender = example_genders.sample
   rand_ethnicity = example_ethnicities.sample
   rand_age = Random.rand(141)
+
   santa = Santa.new(rand_gender, rand_ethnicity)
   rand_age.times { santa.celebrate_birthday }
+  
   puts "This santa is #{santa.age} years old, and is #{santa.gender} and #{santa.ethnicity}"
 end
 
