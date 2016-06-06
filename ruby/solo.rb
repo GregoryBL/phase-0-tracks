@@ -91,23 +91,27 @@ end
 
 goban_array.each { |goban| goban.describe }
 
+# I printed using each because I wanted to be able to print an attribute that wasn't exposed, but I could have done it with a while loop and accessed the properties like:
+#   puts goban_array[ctr].size
+# for a counter variable increasing from 0 while ctr < goban_array.length
+
 # TESTS
 
-test_goban = Goban.new(13, "kaya", "floor")
-test_goban2 = Goban.new(19, "bamboo")
+# test_goban = Goban.new(13, "kaya", "floor")
+# test_goban2 = Goban.new(19, "bamboo")
 
-test_goban.add_stone("black", "K13")
-test_goban.add_stone("white", "D4")
+# test_goban.add_stone("black", "K13")
+# test_goban.add_stone("white", "D4")
 
-test_goban.read_stone("K13")
-test_goban.read_stone("D4")
-test_goban.remove_stone("K13")
-test_goban.read_stone("k13")
-test_goban.remove_all_stones
-test_goban.read_stone("D4")
+# test_goban.read_stone("K13")
+# test_goban.read_stone("D4")
+# test_goban.remove_stone("K13")
+# test_goban.read_stone("k13")
+# test_goban.remove_all_stones
+# test_goban.read_stone("D4")
 
-puts test_goban.size
-puts test_goban.material
-puts test_goban.location_of_goban
-test_goban.location_of_goban = "counter"
-puts test_goban.location_of_goban
+# puts test_goban.size
+# puts test_goban.material
+# puts test_goban.location_of_goban
+# test_goban.location_of_goban = "counter"
+# puts test_goban.location_of_goban
