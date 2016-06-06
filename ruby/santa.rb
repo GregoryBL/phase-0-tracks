@@ -14,6 +14,29 @@ class Santa
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
   end
+
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer_name)
+    removed_reindeer = @reindeer_ranking.delete(reindeer_name)
+    if removed_reindeer
+      @reindeer_ranking << removed_reindeer 
+    end
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
 end
 
 # TESTS
@@ -32,3 +55,15 @@ genders.each_with_index do |gender, ind|
 end
 
 p santas
+
+puts test_santa.ethnicity
+puts test_santa.age
+
+test_santa.gender = "new gender"
+
+10.times {test_santa.celebrate_birthday}
+puts test_santa.age
+
+test_santa.get_mad_at("Rudolph")
+test_santa.get_mad_at("Not a reindeer")
+p test_santa
