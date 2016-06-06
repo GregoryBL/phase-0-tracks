@@ -1,4 +1,7 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -24,18 +27,6 @@ class Santa
     if removed_reindeer
       @reindeer_ranking << removed_reindeer 
     end
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
   end
 end
 
