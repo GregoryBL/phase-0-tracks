@@ -61,9 +61,35 @@ class Goban
     number * @size + letter_index
   end
 
+  def describe
+    puts "This goban is #{@size}x#{@size} and has #{number_of_stones} stones on it."
+    puts "It is made of #{@material} and is on the #{location_of_goban}."
+    puts "The point array is #{@points_array}."
+  end
 end
 
+# INTERFACE
+goban_array = []
 
+loop do
+  puts "Would you like to create a goban? (y/n)"
+  if gets.chomp != "y"
+    break
+  end
+
+  puts "What size should the goban be?"
+  goban_size = gets.chomp.to_i
+
+  puts "What material should the goban be?"
+  goban_material = gets.chomp
+
+  puts "Where do you want to place the goban?"
+  goban_location = gets.chomp
+
+  goban_array << Goban.new(goban_size, goban_material, goban_location)
+end
+
+goban_array.each { |goban| goban.describe }
 
 # TESTS
 
