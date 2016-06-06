@@ -30,31 +30,45 @@ class Santa
   end
 end
 
-# TESTS
+# DRIVER CODE
 
-test_santa = Santa.new("gender", "ethnicity")
-test_santa.eat_milk_and_cookies("chocolate chip cookie")
-test_santa.speak
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-santas = []
-
-genders = ["male", "female", "N/A", "fluid"]
-ethnicities = ["Latino", "American Indian", "Martian", "Wood Elf"]
-
-genders.each_with_index do |gender, ind|
-  santas << Santa.new(gender, ethnicities[ind])
+1000.times do 
+  rand_gender = example_genders.sample
+  rand_ethnicity = example_ethnicities.sample
+  rand_age = Random.rand(141)
+  santa = Santa.new(rand_gender, rand_ethnicity)
+  rand_age.times { santa.celebrate_birthday }
+  puts "This santa is #{santa.age} years old, and is #{santa.gender} and #{santa.ethnicity}"
 end
 
-p santas
+# TESTS
 
-puts test_santa.ethnicity
-puts test_santa.age
+# test_santa = Santa.new("gender", "ethnicity")
+# test_santa.eat_milk_and_cookies("chocolate chip cookie")
+# test_santa.speak
 
-test_santa.gender = "new gender"
+# santas = []
 
-10.times {test_santa.celebrate_birthday}
-puts test_santa.age
+# genders = ["male", "female", "N/A", "fluid"]
+# ethnicities = ["Latino", "American Indian", "Martian", "Wood Elf"]
 
-test_santa.get_mad_at("Rudolph")
-test_santa.get_mad_at("Not a reindeer")
-p test_santa
+# genders.each_with_index do |gender, ind|
+#   santas << Santa.new(gender, ethnicities[ind])
+# end
+
+# p santas
+
+# puts test_santa.ethnicity
+# puts test_santa.age
+
+# test_santa.gender = "new gender"
+
+# 10.times {test_santa.celebrate_birthday}
+# puts test_santa.age
+
+# test_santa.get_mad_at("Rudolph")
+# test_santa.get_mad_at("Not a reindeer")
+# p test_santa
