@@ -8,15 +8,16 @@
 //     update the indexOfLongestString to equal the current index
 // Return array[indexOfLongestString]
 
+// Note: returns the first string of the longest length if there are multiple
 function longestString(stringArray) {
   var longestStringLength = 0;
   var indexOfLongestString = null;
   var arrayLength = stringArray.length;
   if (arrayLength == 0) {
     return "No strings in array.";
-  } 
+  }
 
-  for (i=0; i<arrayLength; i++) {
+  for (var i=0; i<arrayLength; i++) {
     if (stringArray[i].length > longestStringLength) {
       longestStringLength = stringArray[i].length;
       indexOfLongestString = i;
@@ -33,13 +34,13 @@ function longestString(stringArray) {
 // For each key in obj1
 //   If obj2.key == obj1.key
 //     return true
-// If we get to the end of the loop they have no shared key/value pairs, so return false  
+// If we get to the end of the loop they have no shared key/value pairs, so return false
 
 function objectsHaveACommonPair(obj1, obj2) {
   var obj1Keys = Object.keys(obj1);
   var numKeys = obj1Keys.length;
 
-  for (i=0; i<numKeys; i++) {
+  for (var i=0; i<numKeys; i++) {
     if (obj1[obj1Keys[i]] == obj2[obj1Keys[i]]) {
       return true;
     }
@@ -67,10 +68,10 @@ function getRandomInt(min, max) {
 function nRandomWords(number) {
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
   var returnArray = [];
-  for (i=0; i<number; i++) {
+  for (var i=0; i<number; i++) {
     var stringLength = getRandomInt(1, 11);
     var newString = '';
-    for (j=0; j<stringLength; j++) {
+    for (var j=0; j<stringLength; j++) {
       newString = newString + alphabet[getRandomInt(0, 26)];
     }
     returnArray.push(newString);
@@ -90,3 +91,8 @@ console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {})); // false
 
 console.log(nRandomWords(10));
 
+for (var i=0; i<10; i++) {
+  var array = nRandomWords(getRandomInt(1,30));
+  console.log(array);
+  console.log(longestString(array));
+}
