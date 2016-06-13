@@ -60,36 +60,43 @@ function objectsHaveACommonPair(obj1, obj2) {
 //   add newString to returnArray
 // return returnArray
 
+// refactored to generate a single word in a separate function
+
 // helper function to abstract away generating a random number between min and max
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function nRandomWords(number) {
+function randomWord(length) {
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var newString = '';
+  for (var j=0; j<length; j++) {
+    newString = newString + alphabet[getRandomInt(0, 26)];
+  }
+  return newString;
+}
+
+function nRandomWords(number) {
   var returnArray = [];
   for (var i=0; i<number; i++) {
-    var stringLength = getRandomInt(1, 11);
-    var newString = '';
-    for (var j=0; j<stringLength; j++) {
-      newString = newString + alphabet[getRandomInt(0, 26)];
-    }
-    returnArray.push(newString);
+    returnArray.push(randomWord(getRandomInt(1, 11)));
   }
   return returnArray;
 }
 
 // TESTS
 
-console.log(longestString(["O", "Tw", "Thr", "four"])); // "four"
-console.log(longestString([])); // "No strings in array."
-console.log(longestString(["", ""])); // "No strings of greater than zero length."
+// console.log(longestString(["O", "Tw", "Thr", "four"])); // "four"
+// console.log(longestString([])); // "No strings in array."
+// console.log(longestString(["", ""])); // "No strings of greater than zero length."
 
-console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {val1: "val1", val2: "val1"})); // true
-console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {val1: "val2", val2: "val1"})); // false
-console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {})); // false
+// console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {val1: "val1", val2: "val1"})); // true
+// console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {val1: "val2", val2: "val1"})); // false
+// console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {})); // false
 
-console.log(nRandomWords(10));
+// console.log(nRandomWords(10));
+
+// DRIVER CODE
 
 for (var i=0; i<10; i++) {
   var array = nRandomWords(getRandomInt(1,30));
