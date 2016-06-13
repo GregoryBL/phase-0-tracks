@@ -7,8 +7,8 @@
 // Return returnString
 
 function reverse(string) {
-  length = string.length;
-  returnString = '';
+  var length = string.length;
+  var returnString = '';
 
   for (i=length; i > 0; i--) {
     returnString = returnString + string[i-1];
@@ -18,3 +18,12 @@ function reverse(string) {
 
 // Test
 console.log(reverse("Testing String"));
+
+// Driver code
+var reversedString = reverse("New Testing String!");
+
+if (reversedString == "!gnirtS gnitseT weN") {
+  console.log(reversedString);
+} else {
+  console.log("Didn't work.")
+}
