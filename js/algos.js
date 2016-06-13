@@ -30,6 +30,29 @@ function longestString(stringArray) {
   return stringArray[indexOfLongestString];
 }
 
+// For each key in obj1
+//   If obj2.key == obj1.key
+//     return true
+// If we get to the end of the loop they have no shared key/value pairs, so return false  
+
+function objectsHaveACommonPair(obj1, obj2) {
+  var obj1Keys = Object.keys(obj1);
+  var numKeys = obj1Keys.length;
+
+  for (i=0; i<numKeys; i++) {
+    if (obj1[obj1Keys[i]] == obj2[obj1Keys[i]]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// TESTS
+
 console.log(longestString(["O", "Tw", "Thr", "four"])); // "four"
 console.log(longestString([])); // "No strings in array."
 console.log(longestString(["", ""])); // "No strings of greater than zero length."
+
+console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {val1: "val1", val2: "val1"})); // true
+console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {val1: "val2", val2: "val1"})); // false
+console.log(objectsHaveACommonPair({ val1: "val1", val2: "val2"}, {})); // false
