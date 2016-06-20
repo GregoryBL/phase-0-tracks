@@ -36,6 +36,13 @@ function longestString(stringArray) {
 //     return true
 // If we get to the end of the loop they have no shared key/value pairs, so return false
 
+// 
+// Find out if two objects have common..
+//
+// param obj1 {Object} -- the first
+// param obj2 {}
+//
+// Return
 function objectsHaveACommonPair(obj1, obj2) {
   var obj1Keys = Object.keys(obj1);
   var numKeys = obj1Keys.length;
