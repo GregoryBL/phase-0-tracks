@@ -1,0 +1,93 @@
+Release 2:
+
+1. SELECT * FROM trips;
+
+1|1|1|2|1466621785
+2|2|3|4|1466621807
+3|2|4|1|1466621815
+4|3|2|2|1466621825
+5|1|2|4|1466621842
+6|3|2|3|1466467200
+7|3|3|1|1466467200
+8|3|1|2|1466467200
+
+2. UPDATE people SET expiration=strftime('%s', '2019-12-25') WHERE id=2;
+
+3. SELECT * FROM trips, people WHERE people.id = trips.person_id;
+
+1|1|1|2|1466621785|1|Greg Berns-Leone|1493683200
+2|2|3|4|1466621807|2|Leul Bezane|1577232000
+3|2|4|1|1466621815|2|Leul Bezane|1577232000
+4|3|2|2|1466621825|3|Alex Sippel|1473811200
+5|1|2|4|1466621842|1|Greg Berns-Leone|1493683200
+6|3|2|3|1466467200|3|Alex Sippel|1473811200
+7|3|3|1|1466467200|3|Alex Sippel|1473811200
+8|3|1|2|1466467200|3|Alex Sippel|1473811200
+
+4. SELECT trips.date, people.name
+     FROM trips
+       JOIN people ON trips.person_id = people.id;
+
+1466621785|Greg Berns-Leone
+1466621807|Leul Bezane
+1466621815|Leul Bezane
+1466621825|Alex Sippel
+1466621842|Greg Berns-Leone
+1466467200|Alex Sippel
+1466467200|Alex Sippel
+1466467200|Alex Sippel
+
+5. DELETE FROM trips WHERE person_id = 2; 
+// I inserted them back in before release 3.
+
+Release 3:
+
+2.1 SELECT T.date, P.name, FrSt.name as FromStationName, ToSt.name as ToStationName
+      FROM trips T
+        JOIN people P ON T.person_id = P.id
+        JOIN stations FrSt ON T.from_id = FrSt.id
+        JOIN stations ToSt ON T.to_id = ToSt.id;
+
+1466621785|Greg Berns-Leone|Ashland & Lake|Greenview & Fullerton
+1466621807|Leul Bezane|Hampden & Diversey|Broadway & Cornelia
+1466621815|Leul Bezane|Broadway & Cornelia|Ashland & Lake
+1466621825|Alex Sippel|Greenview & Fullerton|Greenview & Fullerton
+1466621842|Greg Berns-Leone|Greenview & Fullerton|Broadway & Cornelia
+1466467200|Alex Sippel|Greenview & Fullerton|Hampden & Diversey
+1466467200|Alex Sippel|Hampden & Diversey|Ashland & Lake
+1466467200|Alex Sippel|Ashland & Lake|Greenview & Fullerton
+
+2.2 SELECT T.date, P.name, FrSt.name as FromStationName, ToSt.name as ToStationName
+      FROM trips T
+        RIGHT JOIN people P ON T.person_id = P.id
+        JOIN stations FrSt ON T.from_id = FrSt.id
+        JOIN stations ToSt ON T.to_id = ToSt.id;
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+2.3 SELECT trips.date, people.name
+      FROM trips
+        LEFT JOIN people ON trips.person_id = people.id;
+
+1466621785|Greg Berns-Leone
+1466621825|Alex Sippel
+1466621842|Greg Berns-Leone
+1466467200|Alex Sippel
+1466467200|Alex Sippel
+1466467200|Alex Sippel
+1466626096|Leul Bezane
+1466626103|Leul Bezane
+
+2.4 SELECT trips.date, people.name
+      FROM people
+        LEFT JOIN trips ON people.id = trips.person_id;
+
+1466621785|Greg Berns-Leone
+1466621842|Greg Berns-Leone
+1466626096|Leul Bezane
+1466626103|Leul Bezane
+1466467200|Alex Sippel
+1466467200|Alex Sippel
+1466467200|Alex Sippel
+1466621825|Alex Sippel
+|Jennifer Burger
