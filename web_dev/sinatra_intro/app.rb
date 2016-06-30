@@ -62,18 +62,17 @@ get '/add/:num1/to/:num2' do
 end
 
 get '/search' do
-  p params[:campus]
   if params[:campus]
     results = db.execute("SELECT * FROM students WHERE campus = ?", params[:campus])
-    p results
+    response = "<h1>Students from #{params[:campus]} campus:</h1>"
+    results.each do |student|
+      response << "ID: #{student['id']}<br>"
+      response << "Name: #{student['name']}<br>"
+      response << "Age: #{student['age']}<br><br>"
+    end
   else
     results = []
-  end
-  response = "<h1>Students from #{params[:campus]} campus:</h1>"
-  results.each do |student|
-    response << "ID: #{student['id']}<br>"
-    response << "Name: #{student['name']}<br>"
-    response << "Age: #{student['age']}<br><br>"
+    response = "No campus selected."
   end
   response
 end
