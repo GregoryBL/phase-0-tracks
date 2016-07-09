@@ -48,11 +48,14 @@ Biggest things are reducing boilerplate for accessing the document and simplifyi
 
 * .parent(), .children(), .prev(), .next() - returns selection of the parent, the children, and the previous and next sibling elements
 
-# .parents(), .find(), .siblings(), .nextAll(), .prevAll() - returns selection recursively (siblings is both directions)
+* .parents(), .find(), .siblings(), .nextAll(), .prevAll() - returns selection recursively (siblings is both directions)
 
-# .css() - gets and sets the CSS of an item. Can use two strings or an object of key-value pairs
+* .css() - gets and sets the CSS of an item. Can use two strings or an object of key-value pairs
 
-# .on(event, function) - calls the function when the event happens. Shorthand methods include .click, .focus, .blur, .change
+* .on(event, function) - calls the function when the event happens. Shorthand methods include .click, .focus, .blur, .change
 
-# .off(event) - turns the listener off
+* .off(event) - turns the listener off
 
+## Reflection
+
+I didn't end up testing these, mostly because I'd done much of this before and the docs made sense. I'll be using them in a toy project to build a number grid.
