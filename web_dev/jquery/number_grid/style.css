@@ -1,0 +1,58 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+form {
+  border: solid black 1px;
+  margin: 10px;
+}
+
+.input {
+  display: block;
+  margin: 5px;
+}
+
+input {
+  width: 50px;
+}
+
+#number-grid {
+  width: 100%;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+.ng-cell {
+  width: 9%;
+  border: solid black 1px;
+  text-align: center;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  line-height: 100px;
+}
+
+.number {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: Helvetica;
+  margin:0px;
+  padding:0px;
+  flex: 1 1 100%;
+}
+
+.first-factor {
+  background-color: red;
+}
+
+.second-factor {
+  background-color: blue;
+}
+
+.both-factors {
+  background-color: purple;
+}
