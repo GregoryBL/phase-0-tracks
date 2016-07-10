@@ -2,16 +2,18 @@ $(document).ready(function() {
   var ng = $("#number-grid");
   var firstCell = ng.children();
   
-  firstCell.height(firstCell.width());
+  // firstCell.height(firstCell.width());
   firstCell.detach();
 
   $(window).resize(function() {
-    setCellSize(ng, $("input[name='cols']").val());
-  });
-
-  $("button").click(function() {
     resetTable(ng, firstCell);
   });
+
+  $("input").change(function() {
+    resetTable(ng, firstCell);
+  });
+
+  resetTable(ng, firstCell);
 
 });
 
@@ -21,11 +23,6 @@ function setCellSize(numberGrid, template, numCols) {
 
   template.width(width/numCols-2);
   template.height(width/numCols-2);
-  template.children().filter("span").height(width/numCols-2);
-  // cells.each(function() {
-  //   $(this).width(width/numCols-2);
-  //   $(this).height(width/numCols-2);
-  // });
 }
 
 
@@ -39,9 +36,10 @@ function resetTable(numberGrid, template) {
   var numHoriz = $("input[name='cols']").val();
   var numVert = $("input[name='rows']").val();
 
+  // set template to the correct size
   setCellSize(numberGrid, template, numHoriz);
 
-  // make and add new cells
+  // make and add new cells based on template
   var numBoxes = numHoriz * numVert;
   for (i=0;i<numBoxes;i++) {
     var newCell = template.clone();
@@ -49,8 +47,7 @@ function resetTable(numberGrid, template) {
     newCell.appendTo(numberGrid);
   }
 
-  // setCellSize(numberGrid, numHoriz);
-
+  // color the relevant cells
   var fact1 = $("input[name='factor1']").val();
   var fact2 = $("input[name='factor2']").val();
   setFactorHighlights(numberGrid, fact1, fact2);

@@ -18,9 +18,9 @@ input {
 }
 
 #number-grid {
-  width: 100%;
+  width: 90%;
+  padding: 5%;
   text-align: center;
-  background-color: lightgrey;
 }
 
 .ng-cell {
@@ -30,10 +30,6 @@ input {
   float: left;
   display: flex;
   align-items: center;
-}
-
-.center {
-  line-height: 100px;
 }
 
 .number {
